@@ -1,0 +1,3 @@
+[submodule "validation/cuda-samples"]
+	path = validation/cuda-samples
+	url = git@github.com:NVIDIA/cuda-samples.git

@@ -1,0 +1,33 @@
+[package]
+name = "parser"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+
+[features]
+default = []
+
+[package.metadata.cargo-feature-combinations]
+denylist = ["default"]
+
+[dependencies]
+lazy_static = "1"
+color-eyre = "0.6"
+thiserror = "1"
+pest = "2.0"
+pest_derive = "2.0"
+pest-ast = "0.3"
+from-pest = "0.3"
+
+[dev-dependencies]
+pretty_assertions = "1"
+color-eyre = "0.6"
+approx = "0"
+regex = "1"
+criterion = "0.4"
+testcontainers = "0.14"
+tempfile = "3"
+tokio = { version = "1", features = ["time", "rt-multi-thread", "macros"] }
+tokio-test = "0"

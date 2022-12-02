@@ -1,0 +1,63 @@
+[package]
+name = "ptxemu"
+version = "0.1.0"
+edition = "2021"
+authors = ["romnn <contact@romnn.com>"]
+description = "parallel PTX emulator"
+license-file = "LICENSE"
+readme = "README.md"
+homepage = "https://github.com/romnn/ptxemu"
+repository = "https://github.com/romnn/ptxemu"
+# categories = [
+#   "multimedia::images",
+#   "command-line-utilities",
+#   "wasm",
+#   "web-programming"
+# ]
+# keywords = [
+#   "image",
+#   "35mm",
+#   "film",
+#   "photography",
+#   "borders"
+# ]
+# exclude = [
+#   "samples/*",
+#   "www/*",
+#   "nginx.conf",
+#   "tasks.py",
+#   "Dockerfile*"
+# ]
+
+[profile.release]
+# enable link time optimization
+lto = true
+
+[lib]
+crate-type = ["cdylib", "lib"]
+
+[features]
+default = []
+
+[workspace]
+members = [
+  "parser",
+]
+
+[package.metadata.cargo-feature-combinations]
+denylist = ["default"]
+
+[dependencies]
+# lazy_static = "1"
+# thiserror = "1"
+# pest = "2.0"
+# pest_derive = "2.0"
+# pest-ast = "0.3"
+# from-pest = "0.3"
+
+[dev-dependencies]
+# pretty_assertions = "1"
+# anyhow = "1"
+# approx = "0"
+# regex = "1"
+# criterion = "0.4"
